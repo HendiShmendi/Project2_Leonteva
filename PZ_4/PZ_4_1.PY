@@ -18,3 +18,6 @@ try:
         
 except ValueError:
     print("Ошибка: введите целые числа!")
+
+    
+    
