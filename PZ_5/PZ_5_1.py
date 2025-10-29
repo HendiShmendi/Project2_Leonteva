@@ -3,8 +3,13 @@
 def sum_range(n, m):
     # Функция возвращает сумму чисел от n до m включительно
     if n > m:
-        n, m = m, n  # Меняем местами, если n больше m
-    return sum(range(n, m + 1))
+        n, m = m, n  # меняем местами, если n больше m
+
+    total = 0
+    while n <= m:
+        total += n
+        n += 1
+    return total
 
 
 try:
@@ -13,4 +18,4 @@ try:
     total = sum_range(n, m)
     print(f"Сумма чисел от {n} до {m} равна {total}")
 except ValueError:
-    print("Ошибка: необходимо вводить целые числа!")
+    print("Ошибка: нужно вводить только целые числа!")
