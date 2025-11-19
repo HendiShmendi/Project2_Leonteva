@@ -19,4 +19,4 @@ try:
             print("FALSE")
 except ValueError:
     print("Ошибка: введите целое число!")   
-    
+  
