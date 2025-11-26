@@ -18,3 +18,4 @@ else:
     S = S[:index] + S2 + S[index + len(S1):]
 
     print('Преобразованная строка:', S)
+    
