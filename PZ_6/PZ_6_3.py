@@ -56,7 +56,7 @@ while i < N1:
     while j < N2:
         dx = BX[j] - AX[i]
         dy = BY[j] - AY[i]
-        d = math.sqrt(dx*dx + dy*dy)   # расстояние
+        d = math.sqrt(dx*2 + dy*2)   # расстояние
         if d < min_dist:
             min_dist = d
             a_index = i

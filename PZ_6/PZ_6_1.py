@@ -21,3 +21,4 @@ while i < N:
     i += 1
 
 print('Результат:', result)
+
