@@ -7,15 +7,12 @@ class FormaZayavki(tk.Tk):
         super().__init__()
         self.title("Форма заявки")
         self.resizable(False, False)
-        self.configure(bg="#d4d0c8")
-
-        # Цвета в стиле Windows 2000 / классический зелёный заголовок
-        GREEN_HEADER = "#1e7a40"
+        self.configure(bg="#ffffff")
+        GREEN_HEADER = "#2b7245"
         WHITE = "#ffffff"
         LIGHT_GRAY = "#f0efea"
         BORDER = "#808080"
 
-        # ── Заголовок ──────────────────────────────────────────────────────────
         header = tk.Frame(self, bg=GREEN_HEADER)
         header.pack(fill="x")
         tk.Label(
@@ -27,11 +24,10 @@ class FormaZayavki(tk.Tk):
             pady=5,
         ).pack()
 
-        # ── Главная рамка ──────────────────────────────────────────────────────
+        
         outer = tk.Frame(self, bg=LIGHT_GRAY, bd=1, relief="solid")
         outer.pack(padx=2, pady=2, fill="both", expand=True)
 
-        # ── Информационный блок ────────────────────────────────────────────────
         info_frame = tk.Frame(outer, bg=LIGHT_GRAY, bd=1, relief="solid")
         info_frame.pack(fill="x", padx=4, pady=(4, 2))
 
@@ -52,7 +48,6 @@ class FormaZayavki(tk.Tk):
             pady=4,
         ).pack(fill="x")
 
-        # ── Вспомогательные методы ─────────────────────────────────────────────
         def make_row(parent, label_text, required=False):
             """Одна строка: метка | поле ввода (+ метка *)"""
             row = tk.Frame(parent, bg=LIGHT_GRAY, bd=1, relief="solid")
@@ -133,7 +128,6 @@ class FormaZayavki(tk.Tk):
             btn.pack(side="left", padx=(4, 2), pady=2)
             return path_var
 
-        # ── Поля формы ─────────────────────────────────────────────────────────
         self.name_entry = make_row(outer, "Ваше имя:", required=True)
         self.email_entry = make_row(outer, "Ваш Email:", required=True)
         self.subject_entry = make_row(outer, "Тема письма:", required=False)
@@ -142,7 +136,6 @@ class FormaZayavki(tk.Tk):
         self.file2 = make_file_row(outer, "Прикрепить файл:")
         self.file3 = make_file_row(outer, "Прикрепить файл:")
 
-        # ── Сообщение ──────────────────────────────────────────────────────────
         msg_row = tk.Frame(outer, bg=LIGHT_GRAY, bd=1, relief="solid")
         msg_row.pack(fill="both", expand=True, padx=4, pady=1)
 
@@ -183,7 +176,6 @@ class FormaZayavki(tk.Tk):
         self.message_text.pack(side="left", fill="both", expand=True)
         scrollbar.pack(side="right", fill="y")
 
-        # ── Кнопки ─────────────────────────────────────────────────────────────
         btn_frame = tk.Frame(outer, bg=LIGHT_GRAY)
         btn_frame.pack(pady=6)
 
@@ -211,10 +203,8 @@ class FormaZayavki(tk.Tk):
         )
         clear_btn.pack(side="left", padx=8)
 
-        # Зелёная нижняя полоска
         tk.Frame(self, bg=GREEN_HEADER, height=6).pack(fill="x", side="bottom")
 
-    # ── Логика ────────────────────────────────────────────────────────────────
     def send_email(self):
         name = self.name_entry.get().strip()
         email = self.email_entry.get().strip()

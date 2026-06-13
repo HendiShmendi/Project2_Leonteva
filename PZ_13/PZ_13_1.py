@@ -6,8 +6,8 @@ import re
 with open("Dostoevsky.txt", encoding="utf-8") as f:
     text = f.read()
 
-# Находим все произведения — текст в кавычках «»
-works = re.findall(r'«([^»]+)»', text)
+# Находим все произведения — текст в кавычках «», 
+works = re.findall(r'«([А-ЯЁA-Z][^»]+)»', text)
 
 # Убираем дубликаты, сохраняя порядок
 unique_works = list(dict.fromkeys(works))
